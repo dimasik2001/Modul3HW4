@@ -6,9 +6,12 @@ namespace Modul3HW4
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("First Task");
+            var firstTask = new DelegateTask();
+            firstTask.Run();
+            Console.WriteLine("SecondTask");
+            var secondTask = new LINQTask();
+            secondTask.Run();
         }
     }
 }
