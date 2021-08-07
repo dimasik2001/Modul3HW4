@@ -9,6 +9,7 @@ namespace Modul3HW4
             Console.WriteLine("First Task");
             var firstTask = new DelegateTask();
             firstTask.Run();
+            Console.WriteLine("SecondTask");
             var secondTask = new LINQTask();
             secondTask.Run();
         }

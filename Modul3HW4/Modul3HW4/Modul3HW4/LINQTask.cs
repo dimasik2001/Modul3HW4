@@ -78,10 +78,17 @@ namespace Modul3HW4
 
         public void Run()
         {
-            var collection = _contacts.Where(c => c.Phone == "Yuriy");
-            var strPhone = _contacts.Select(c => c.Phone).ToArray();
-            var collection2 = collection.OrderBy(c => c.Name);
-            var collection3 = _contacts.Where(c => c.Name == "Helen").Union(collection);
+            Console.WriteLine("Contacts with name Yuriy");
+            var collection = _contacts.Where(c => c.Name == "Yuriy").Foreach(c => Console.WriteLine(c));
+            Console.WriteLine("First Maxim:");
+            var item = _contacts.FirstOrDefault(c => c.Name == "Maxim");
+            Console.WriteLine(item);
+            Console.WriteLine("All Phones:");
+            var strPhone = _contacts.Select(c => c.Phone).ToArray().Foreach(str => Console.WriteLine(str));
+            Console.WriteLine("Sorted contacts");
+            var collection2 = _contacts.OrderBy(c => c.Name).ThenBy(c => c.Phone).Foreach(c => Console.WriteLine(c));
+            Console.WriteLine("Yuriys and Helens:");
+            var collection3 = _contacts.Where(c => c.Name == "Helen").Union(collection).Foreach(c => Console.WriteLine(c));
         }
     }
 }
